@@ -1,0 +1,117 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, hsl(220, 60%, 20%), hsl(220, 50%, 30%), hsl(35, 60%, 42%));
+  padding: 1rem;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 420px;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-logo {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: hsl(40, 30%, 97%);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.login-subtitle {
+  color: hsl(35, 60%, 72%);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+.login-card {
+  background: hsl(40, 30%, 99%);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 20px 60px -12px rgba(0, 0, 0, 0.3);
+}
+
+.login-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid hsl(40, 20%, 88%);
+}
+
+.login-tab {
+  flex: 1;
+  padding: 0.65rem 1rem;
+  border: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  color: hsl(220, 15%, 45%);
+  transition: all 0.2s;
+}
+
+.login-tab.active {
+  background: hsl(220, 60%, 25%);
+  color: hsl(40, 30%, 97%);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-group label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: hsl(220, 30%, 25%);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.login-error {
+  background: hsl(0, 72%, 96%);
+  color: hsl(0, 72%, 45%);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.login-success {
+  background: hsl(152, 60%, 94%);
+  color: hsl(152, 60%, 30%);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: hsl(40, 20%, 80%);
+  font-size: 0.85rem;
+  font-family: var(--font-body);
+}

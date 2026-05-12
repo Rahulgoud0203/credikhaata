@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 97%;
+    --foreground: 220 30% 15%;
+
+    --card: 40 30% 99%;
+    --card-foreground: 220 30% 15%;
+
+    --popover: 40 30% 99%;
+    --popover-foreground: 220 30% 15%;
+
+    --primary: 220 60% 25%;
+    --primary-foreground: 40 30% 97%;
+
+    --secondary: 35 60% 52%;
+    --secondary-foreground: 40 30% 99%;
+
+    --muted: 40 20% 92%;
+    --muted-foreground: 220 15% 45%;
+
+    --accent: 35 60% 52%;
+    --accent-foreground: 40 30% 99%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 152 60% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 220 30% 15%;
+
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 220 60% 25%;
+
+    --radius: 0.5rem;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Source Sans 3', sans-serif;
+
+    --shadow-royal: 0 4px 24px -4px hsl(220 30% 15% / 0.08);
+    --shadow-card: 0 2px 12px -2px hsl(220 30% 15% / 0.06);
+    --shadow-elevated: 0 12px 40px -8px hsl(220 30% 15% / 0.12);
+
+    --sidebar-background: 220 60% 20%;
+    --sidebar-foreground: 40 30% 97%;
+    --sidebar-primary: 35 60% 52%;
+    --sidebar-primary-foreground: 40 30% 99%;
+    --sidebar-accent: 220 50% 30%;
+    --sidebar-accent-foreground: 40 30% 97%;
+    --sidebar-border: 220 50% 30%;
+    --sidebar-ring: 35 60% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .royal-card {
+    @apply bg-card rounded-lg border;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+  }
+
+  .royal-card:hover {
+    box-shadow: var(--shadow-royal);
+  }
+
+  .royal-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(220 50% 35%));
+  }
+
+  .gold-accent {
+    color: hsl(var(--secondary));
+  }
+
+  .status-overdue {
+    @apply text-destructive font-semibold;
+  }
+
+  .status-uptodate {
+    color: hsl(var(--success));
+    @apply font-semibold;
+  }
+
+  .badge-overdue {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold;
+    background-color: hsl(var(--destructive) / 0.1);
+    color: hsl(var(--destructive));
+  }
+
+  .badge-uptodate {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold;
+    background-color: hsl(var(--success) / 0.1);
+    color: hsl(var(--success));
+  }
+
+  .form-input-royal {
+    @apply w-full px-4 py-3 rounded-lg border bg-card text-foreground;
+    font-family: var(--font-body);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .form-input-royal:focus {
+    @apply outline-none;
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1);
+  }
+
+  .btn-primary-royal {
+    @apply px-6 py-3 rounded-lg font-semibold text-sm tracking-wide;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    font-family: var(--font-body);
+    transition: all 0.2s;
+  }
+
+  .btn-primary-royal:hover {
+    background: hsl(220 60% 30%);
+    box-shadow: var(--shadow-royal);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary-royal {
+    @apply px-6 py-3 rounded-lg font-semibold text-sm tracking-wide;
+    background: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+    font-family: var(--font-body);
+    transition: all 0.2s;
+  }
+
+  .btn-secondary-royal:hover {
+    background: hsl(35 60% 46%);
+    box-shadow: var(--shadow-royal);
+    transform: translateY(-1px);
+  }
+
+  .page-container {
+    @apply max-w-6xl mx-auto px-4 py-8;
+  }
+
+  .page-title {
+    font-family: var(--font-display);
+    @apply text-3xl font-bold tracking-tight;
+    color: hsl(var(--foreground));
+  }
+
+  .table-royal {
+    @apply w-full text-left;
+  }
+
+  .table-royal th {
+    @apply px-4 py-3 text-xs font-semibold uppercase tracking-wider;
+    color: hsl(var(--muted-foreground));
+    border-bottom: 2px solid hsl(var(--border));
+  }
+
+  .table-royal td {
+    @apply px-4 py-4;
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  .table-royal tbody tr {
+    transition: background-color 0.15s;
+  }
+
+  .table-royal tbody tr:hover {
+    background-color: hsl(var(--muted) / 0.5);
+  }
+}
